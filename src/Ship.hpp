@@ -60,6 +60,8 @@ namespace dgmpp {
 
 		void remove (Module* module) { LOCK(this); remove_(module); }
 		void remove (Drone* drone) { LOCK(this); remove_(drone); }
+		bool canFitType (TypeID typeID) { return canFit(Module::Create(typeID).get()); }
+		bool canFitDroneType (TypeID typeID) { return canFit(Drone::Create(typeID).get()); }
 		bool canFit (Module* module) { LOCK(this); return canFit_(module); }
 		bool canFit (Drone* drone) { LOCK(this); return canFit_(drone); }
 		std::vector<Module*> modules (Module::Slot slot) const { LOCK(this); return modules_(slot); }
