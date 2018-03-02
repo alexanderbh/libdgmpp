@@ -71,7 +71,7 @@ namespace dgmpp {
 		Charge* charge (std::unique_ptr<Charge>&& charge) { LOCK(this); return charge_(std::move(charge)); }
 		Charge* charge (TypeID typeID) { LOCK(this); return charge(Charge::Create(typeID)); }
 		bool canFit (Charge* charge) { LOCK(this); return canFit_(charge); }
-
+		bool canFitType (TypeID typeID) { return canFit(Charge::Create(typeID).get()); }
 		
 		bool requireTarget()	const noexcept { LOCK(this); return requireTarget_(); }
 		bool fail()				const noexcept { LOCK(this); return fail_(); }
