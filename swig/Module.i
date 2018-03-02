@@ -54,6 +54,7 @@ namespace dgmpp {
 		Charge* charge() const noexcept;
 		Charge* charge (TypeID typeID);
 		bool canFit (Charge* charge);
+		bool canFitType (TypeID typeID);
 		const std::vector<GroupID>& chargeGroups() const noexcept;
 		
 		Charge::Size chargeSize();

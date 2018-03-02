@@ -63,6 +63,8 @@ namespace dgmpp {
 		
 		void remove (Module* module);
 		void remove (Drone* drone);
+		bool canFitType (TypeID typeID);
+		bool canFitDroneType (TypeID typeID);
 		bool canFit (Module* module);
 		bool canFit (Drone* drone);
 		std::vector<Module*> modules (Module::Slot slot) const;
